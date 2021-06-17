@@ -18,6 +18,7 @@ class Game {
 		}
 
 		if(lowerlimit < 0 || upperlimit < 0) System.out.println("Either of the limits is negative");
+		else if(lowerlimit == upperlimit) System.out.println("Upper and lowerlimits cannot be equal!");
 		else Game.logic(lowerlimit, upperlimit);
 	}
 
