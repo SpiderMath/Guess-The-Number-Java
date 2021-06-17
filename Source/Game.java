@@ -28,7 +28,17 @@ class Game {
 
 		System.out.println("A random number between " + lowerlimit + " and " + upperlimit + " has been chosen. You have 5 tries to guess the correct answer");
 		for(int i = 0; i < 5; i++) {
-			int input = myScanner.nextInt();
+			int input;
+
+			try {
+				String val = myScanner.next();
+				input = Integer.parseInt(val);
+			}
+			catch(NumberFormatException err) {
+				System.out.println("Please provide a valid number as input!");
+				i -= 1;
+				continue;
+			}
 
 			if(input == random) {
 				System.out.println("You guessed the correct number! You win!");
